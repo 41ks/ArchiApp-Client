@@ -1,23 +1,46 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width">
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
     <title>Messagerie</title>
-    <link href="style.css" rel="stylesheet" type="text/css">
+    <link href="style.css" rel="stylesheet" type="text/css" />
+    <script src="script.js"></script>
   </head>
   <body>
-    <h1>Sujet - Patate</h1>
-    <ul>
-      <li>Ceci est un message</li>
-      <li>Ceci est un autre message</li>
-      <li>Les patates c'est bon</li>
-      <li>Les patates c'est la vie</li>
-      <li>Les patates c'est la mort</li>
-    </ul>
-    <textarea id="message" placeholder="Votre message"></textarea>
-    <button id="send">Envoyer</button>
-
-    <script src="script.js"></script>
+    <div id="header">
+      <h1>Messagerie</h1>
+      <button onclick="toggleDarkMode()">
+        <img src="dark-mode.svg" class="dark-mode-icon" alt="Dark mode" />
+      </button>
+    </div>
+    <div id="messages">
+      <ul id="message-list">
+        <li>
+          <h3>Person 1</h3>
+          <p>Ceci est un message</p>
+        </li>
+        <li>
+          <h3>Person 2</h3>
+          <p>Ceci est un autre message</p>
+        </li>
+        <li>
+          <h3>Person 3</h3>
+          <p>les patates c'est bon</p>
+        </li>
+        <li>
+          <h3>Person 4</h3>
+          <p>Les patates c'est la vie</p>
+        </li>
+        <li>
+          <h3>Person 5</h3>
+          <p>Les patates c'est la mort</p>
+        </li>
+      </ul>
+      <div id="form">
+        <textarea id="message" placeholder="Votre message"></textarea>
+        <button id="send" onclick="update(msgs)">Mise à jour</button>
+      </div>
+    </div>
   </body>
 </html>
