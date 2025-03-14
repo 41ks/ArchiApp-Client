@@ -1,24 +1,5 @@
-function fact(n) {
-    if (n == 0) {
-        return 1;
-    } else {
-        return n * fact(n - 1);
-    }
-}
-
-function applique(f, tab) {
-    let res = [];
-    for (e of tab) {
-        res.push(f(e));
-    }
-    return res;
-}
-
-msgs = [
-    { "pseudo": "Alice", "time": "07/03/2025 à 15h00", "msg": "Hello World" },
-    { "pseudo": "Bob", "time": "07/03/2025 à 15h02", "msg": "Blah Blah" },
-    { "pseudo": "Alice", "time": "07/03/2025 à 15h05", "msg": "I love cats" }
-];
+// Get environment variable
+const SERVER_URL = process.env.SERVER_URL;
 
 function update(msgs) {
     console.log("update");
@@ -40,6 +21,20 @@ function update(msgs) {
     }
 }
 
+function sendMessage() {
+    let pseudo = "Anonymous";
+    let msg = document.getElementById("message").value;
+    console.log("Sending message: " + msg);
+    fetch(SERVER_URL + "/msg/post?pseudo=" + pseudo + "&msg=" + msg)
+    .then(function(response) {
+        if (response.code == -1) {
+            console.error("Error while posting message");
+        }
+        return response.json();
+    })
+    .then(fetchAllMessages);
+}
+
 function toggleDarkMode() {
     let root = document.documentElement;
     if (root.classList.contains("dark-mode")) {
@@ -48,3 +43,16 @@ function toggleDarkMode() {
         root.classList.add("dark-mode");
     }
 }
+
+function fetchAllMessages() {
+    fetch(SERVER_URL + "/msg/getAll")
+    .then(function(response) {
+        return response.json();
+    })
+    .then(function(data) {
+        update(data.msgs);
+    });
+}
+
+fetchAllMessages();
+alert("End of script.js");

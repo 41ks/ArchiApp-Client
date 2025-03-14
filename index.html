@@ -16,31 +16,11 @@
     </div>
     <div id="messages">
       <ul id="message-list">
-        <li>
-          <h3>Person 1</h3>
-          <p>Ceci est un message</p>
-        </li>
-        <li>
-          <h3>Person 2</h3>
-          <p>Ceci est un autre message</p>
-        </li>
-        <li>
-          <h3>Person 3</h3>
-          <p>les patates c'est bon</p>
-        </li>
-        <li>
-          <h3>Person 4</h3>
-          <p>Les patates c'est la vie</p>
-        </li>
-        <li>
-          <h3>Person 5</h3>
-          <p>Les patates c'est la mort</p>
-        </li>
       </ul>
-      <div id="form">
-        <textarea id="message" placeholder="Votre message"></textarea>
-        <button id="send" onclick="update(msgs)">Mise à jour</button>
-      </div>
+      <form id="form" onsubmit="sendMessage()">
+        <textarea id="message" name="message" placeholder="Votre message"></textarea>
+        <button id="send" type="submit">Envoyer</button>
+      </form>
     </div>
   </body>
 </html>

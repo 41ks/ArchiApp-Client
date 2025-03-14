@@ -101,7 +101,7 @@ textarea {
   color: var(--text-color);
 }
 
-div#form button {
+#form button {
   width: 100%;
   background-color: purple;
   color: white;
@@ -111,6 +111,6 @@ div#form button {
   cursor: pointer;
 }
 
-div#form button:hover {
+#form button:hover {
   background-color: rgb(100, 0, 100);
 }
