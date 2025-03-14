@@ -1,4 +1,4 @@
-const SERVER_URL = "https://archiapp-server.onrender.com/";
+const SERVER_URL = "https://archiapp-server.onrender.com";
 
 function update(msgs) {
     console.log("update");
@@ -54,4 +54,3 @@ function fetchAllMessages() {
 }
 
 fetchAllMessages();
-alert("End of script.js");
