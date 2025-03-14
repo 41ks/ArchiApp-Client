@@ -17,9 +17,9 @@
     <div id="messages">
       <ul id="message-list">
       </ul>
-      <form id="form" onsubmit="sendMessage()">
-        <textarea id="message" name="message" placeholder="Votre message"></textarea>
-        <button id="send" type="submit">Envoyer</button>
+      <form id="form" onsubmit="sendMessage(event)">
+        <textarea id="message" name="message" placeholder="Votre message" tabindex="1"></textarea>
+        <button id="send" type="submit" tabindex="2">Envoyer</button>
       </form>
     </div>
   </body>

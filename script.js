@@ -20,9 +20,11 @@ function update(msgs) {
     }
 }
 
-function sendMessage() {
+function sendMessage(event) {
+    event.preventDefault();
     let pseudo = "Anonymous";
     let msg = document.getElementById("message").value;
+    document.getElementById("message").value = "";
     console.log("Sending message: " + msg);
     fetch(SERVER_URL + "/msg/post?pseudo=" + pseudo + "&msg=" + msg)
     .then(function(response) {
