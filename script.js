@@ -1,5 +1,4 @@
-// Get environment variable
-const SERVER_URL = process.env.SERVER_URL;
+const SERVER_URL = "https://archiapp-server.onrender.com/";
 
 function update(msgs) {
     console.log("update");
