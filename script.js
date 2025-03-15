@@ -14,9 +14,18 @@ function update(msgs) {
         li.appendChild(h3);
         // Time as subtitle
         let sub = document.createElement("p");
-        sub.classList.add("subtitle");
-        sub.appendChild(document.createTextNode(e.time));
-        li.appendChild(sub);
+        if (e.time) {
+            sub.classList.add("subtitle");
+            let dateStr = Intl.DateTimeFormat("fr-FR", {
+                year: "numeric",
+                month: "numeric",
+                day: "numeric",
+                hour: "numeric",
+                minute: "numeric"
+            }).format(new Date(e.time));
+            sub.appendChild(document.createTextNode(dateStr));
+            li.appendChild(sub);
+        }
         // Message as paragraph
         let p = document.createElement("p");
         p.appendChild(document.createTextNode(e.msg));
