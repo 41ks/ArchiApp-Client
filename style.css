@@ -36,6 +36,8 @@ body {
 }
 
 .header {
+  position: sticky;
+  top: 0;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -50,7 +52,7 @@ body {
 }
 
 .messages {
-  padding: 10px;
+  padding: 10px 0;
   max-width: 600px;
   margin: 0 auto;
   box-sizing: border-box;
@@ -88,6 +90,14 @@ li .subtitle {
   font-weight: bold;
   color: var(--subtitle-color);
   margin: 10px 0 0 10px;
+}
+
+.send-form {
+  position: sticky;
+  bottom: 0;
+  background-color: var(--background-color);
+  max-width: 600px;
+  margin: 0 auto;
 }
 
 .form-input {

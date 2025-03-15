@@ -15,25 +15,25 @@
     </div>
     <div id="messages" class="messages">
       <ul id="message-list"></ul>
-      <form id="form" class="send-form" onsubmit="sendMessage(event)">
-        <input
-          id="pseudo"
-          name="pseudo"
-          type="text"
-          placeholder="Votre pseudo"
-          class="form-input"
-          tabindex="1"
-        />
-        <textarea
-          id="message"
-          name="message"
-          placeholder="Votre message"
-          class="form-input"
-          tabindex="2"
-        ></textarea>
-        <button id="send" type="submit" tabindex="3">Envoyer</button>
-      </form>
     </div>
+    <form id="form" class="send-form" onsubmit="sendMessage(event)">
+      <input
+        id="pseudo"
+        name="pseudo"
+        type="text"
+        placeholder="Votre pseudo"
+        class="form-input"
+        tabindex="1"
+      />
+      <textarea
+        id="message"
+        name="message"
+        placeholder="Votre message"
+        class="form-input form-textarea"
+        tabindex="2"
+      ></textarea>
+      <button id="send" type="submit" tabindex="3">Envoyer</button>
+    </form>
     <script src="script.js"></script>
   </body>
 </html>

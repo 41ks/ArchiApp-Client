@@ -60,6 +60,7 @@ function fetchAllMessages() {
         })
         .then(function (data) {
             update(data.msgs);
+            window.scrollTo(0, document.body.scrollHeight);
         });
 }
 
