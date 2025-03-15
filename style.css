@@ -88,15 +88,6 @@ li .subtitle {
   margin: 10px 0 0 10px;
 }
 
-.send-form {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  width: 100%;
-  padding: 0 20px;
-  box-sizing: border-box;
-}
-
 .form-input {
   width: 100%;
   border: none;
