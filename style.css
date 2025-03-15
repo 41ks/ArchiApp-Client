@@ -6,6 +6,7 @@
   --hover-color: #3c0366;
   --subtitle-color: #8a8a8a;
   --border-radius: 10pt;
+  --font-size: 16px;
 }
 
 .dark-mode {
@@ -26,7 +27,7 @@ body {
 
 .toggle-btn {
   padding: 10px;
-  font-size: 16px;
+  font-size: var(--font-size);
   border: solid 1px #fff;
   cursor: pointer;
   border-radius: var(--border-radius);
@@ -79,6 +80,7 @@ li h3 {
 }
 li p {
   margin: 0 10px 10px 10px;
+  font-size: var(--font-size);
 }
 
 li .subtitle {
@@ -92,7 +94,7 @@ li .subtitle {
   width: 100%;
   border: none;
   font-family: Arial, sans-serif;
-  font-size: 14px;
+  font-size: var(--font-size); 
   box-sizing: border-box;
   resize: vertical;
   padding: 10px;
@@ -106,6 +108,7 @@ li .subtitle {
   width: 100%;
   background-color: var(--banner-color);
   color: white;
+  font-size: var(--font-size);
   padding: 10px;
   border: none;
   border-radius: var(--border-radius);
