@@ -10,18 +10,30 @@ function update(msgs) {
     for (e of msgs) {
         let li = document.createElement("li");
         let h3 = document.createElement("h3");
-        h3.appendChild(document.createTextNode(e.time + " - " + e.pseudo));
+        h3.appendChild(document.createTextNode(e.pseudo));
         li.appendChild(h3);
+        // Time as subtitle
+        let sub = document.createElement("p");
+        sub.classList.add("subtitle");
+        sub.appendChild(document.createTextNode(e.time));
+        li.appendChild(sub);
+        // Message as paragraph
         let p = document.createElement("p");
         p.appendChild(document.createTextNode(e.msg));
         li.appendChild(p);
+        // Append the message to the list
         ul.appendChild(li);
     }
 }
 
 function sendMessage(event) {
     event.preventDefault();
-    let pseudo = document.getElementById("pseudo").value || "Anonymous";
+    let pseudo = document.getElementById("pseudo").value;
+    if (pseudo !== "") {
+        localStorage.setItem("pseudo", pseudo);
+    } else {
+        pseudo = "Anonymous";
+    }
     let msg = document.getElementById("message").value;
     document.getElementById("message").value = "";
     console.log("Sending message: " + msg);
@@ -36,7 +48,8 @@ function sendMessage(event) {
 }
 
 function toggleDarkMode() {
-    document.body.classList.toggle("dark-mode");
+    let res = document.body.classList.toggle("dark-mode");
+    localStorage.setItem("dark-mode", res);
 }
 
 function fetchAllMessages() {
@@ -47,6 +60,14 @@ function fetchAllMessages() {
         .then(function (data) {
             update(data.msgs);
         });
+}
+
+if (localStorage.getItem("dark-mode") === "true") {
+    toggleDarkMode();
+}
+
+if (localStorage.getItem("pseudo")) {
+    document.getElementById("pseudo").value = localStorage.getItem("pseudo");
 }
 
 fetchAllMessages();

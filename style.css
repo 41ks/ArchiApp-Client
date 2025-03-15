@@ -2,12 +2,18 @@
   --background-color: #e8dcec;
   --text-color: #000000;
   --foreground-color: #ffffff;
+  --banner-color: #6e11b0;
+  --hover-color: #3c0366;
+  --subtitle-color: #8a8a8a;
+  --border-radius: 10pt;
 }
 
 .dark-mode {
-  --background-color: #3b2e3b;
+  --background-color: #000000;
   --text-color: #ffffff;
-  --foreground-color: #242424;
+  --foreground-color: #171217;
+  --banner-color: #3c0366;
+  --hover-color: #6e11b0;
 }
 
 body {
@@ -19,11 +25,11 @@ body {
 }
 
 .toggle-btn {
-  padding: 5px;
+  padding: 10px;
   font-size: 16px;
   border: solid 1px #fff;
   cursor: pointer;
-  border-radius: 5px;
+  border-radius: var(--border-radius);
   background: transparent;
   color: #fff;
 }
@@ -32,7 +38,7 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background-color: purple;
+  background-color: var(--banner-color);
   padding: 10px;
 }
 
@@ -59,20 +65,27 @@ li {
   background-color: var(--foreground-color);
   color: var(--text-color);
   margin: 5px 0;
-  border-radius: 5px;
+  border-radius: var(--border-radius);
   overflow: hidden;
 }
 
 li h3 {
   margin: 0;
   padding: 5px 10px;
-  background-color: rgb(172, 109, 172);
+  background-color: var(--banner-color);
   color: white;
   font-weight: normal;
   font-size: large;
 }
 li p {
-  margin: 10px;
+  margin: 0 10px 10px 10px;
+}
+
+li .subtitle {
+  font-size: small;
+  font-weight: bold;
+  color: var(--subtitle-color);
+  margin: 10px 0 0 10px;
 }
 
 .send-form {
@@ -93,21 +106,21 @@ li p {
   resize: vertical;
   padding: 10px;
   margin: 5px 0;
-  border-radius: 10px;
+  border-radius: var(--border-radius);
   background-color: var(--foreground-color);
   color: var(--text-color);
 }
 
 .send-form button {
   width: 100%;
-  background-color: purple;
+  background-color: var(--banner-color);
   color: white;
   padding: 10px;
   border: none;
-  border-radius: 10px;
+  border-radius: var(--border-radius);
   cursor: pointer;
 }
 
 .send-form button:hover {
-  background-color: rgb(100, 0, 100);
+  background-color: var(--hover-color);
 }
