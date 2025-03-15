@@ -4,7 +4,7 @@
   --foreground-color: #ffffff;
 }
 
-:root.dark-mode {
+.dark-mode {
   --background-color: #3b2e3b;
   --text-color: #ffffff;
   --foreground-color: #242424;
@@ -16,10 +16,19 @@ body {
   padding: 0;
   background-color: var(--background-color);
   color: var(--text-color);
-  transition: background-color 0.5s, color 0.5s;
 }
 
-div#header {
+.toggle-btn {
+  padding: 5px;
+  font-size: 16px;
+  border: solid 1px #fff;
+  cursor: pointer;
+  border-radius: 5px;
+  background: transparent;
+  color: #fff;
+}
+
+.header {
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -27,27 +36,13 @@ div#header {
   padding: 10px;
 }
 
-div#header h1 {
+.header h1 {
   color: white;
   font-weight: normal;
   margin: 0;
 }
 
-div#header button {
-  background-color: transparent;
-  width: 50px;
-  height: 50px;
-  color: white;
-  border: none;
-  cursor: pointer;
-}
-
-img.dark-mode-icon {
-  width: 100%;
-  height: 100%;
-}
-
-div#messages {
+.messages {
   padding: 10px;
   max-width: 600px;
   margin: 0 auto;
@@ -80,7 +75,7 @@ li p {
   margin: 10px;
 }
 
-div#form {
+.send-form {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -89,19 +84,21 @@ div#form {
   box-sizing: border-box;
 }
 
-textarea {
+.form-input {
   width: 100%;
   border: none;
+  font-family: Arial, sans-serif;
+  font-size: 14px;
   box-sizing: border-box;
   resize: vertical;
   padding: 10px;
-  margin: 10px 0;
+  margin: 5px 0;
   border-radius: 10px;
   background-color: var(--foreground-color);
   color: var(--text-color);
 }
 
-#form button {
+.send-form button {
   width: 100%;
   background-color: purple;
   color: white;
@@ -111,6 +108,6 @@ textarea {
   cursor: pointer;
 }
 
-#form button:hover {
+.send-form button:hover {
   background-color: rgb(100, 0, 100);
 }

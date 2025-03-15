@@ -1,7 +1,6 @@
 const SERVER_URL = "https://archiapp-server.onrender.com";
 
 function update(msgs) {
-    console.log("update");
     // Delete all the previous messages
     let ul = document.getElementById("message-list");
     while (ul.firstChild) {
@@ -22,37 +21,32 @@ function update(msgs) {
 
 function sendMessage(event) {
     event.preventDefault();
-    let pseudo = "Anonymous";
+    let pseudo = document.getElementById("pseudo").value || "Anonymous";
     let msg = document.getElementById("message").value;
     document.getElementById("message").value = "";
     console.log("Sending message: " + msg);
     fetch(SERVER_URL + "/msg/post?pseudo=" + pseudo + "&msg=" + msg)
-    .then(function(response) {
-        if (response.code == -1) {
-            console.error("Error while posting message");
-        }
-        return response.json();
-    })
-    .then(fetchAllMessages);
+        .then(function (response) {
+            if (response.code == -1) {
+                console.error("Error while posting message");
+            }
+            return response.json();
+        })
+        .then(fetchAllMessages);
 }
 
 function toggleDarkMode() {
-    let root = document.documentElement;
-    if (root.classList.contains("dark-mode")) {
-        root.classList.remove("dark-mode");
-    } else {
-        root.classList.add("dark-mode");
-    }
+    document.body.classList.toggle("dark-mode");
 }
 
 function fetchAllMessages() {
     fetch(SERVER_URL + "/msg/getAll")
-    .then(function(response) {
-        return response.json();
-    })
-    .then(function(data) {
-        update(data.msgs);
-    });
+        .then(function (response) {
+            return response.json();
+        })
+        .then(function (data) {
+            update(data.msgs);
+        });
 }
 
 fetchAllMessages();

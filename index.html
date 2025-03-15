@@ -8,18 +8,31 @@
     <script src="script.js"></script>
   </head>
   <body>
-    <div id="header">
+    <div id="header" class="header">
       <h1>Messagerie</h1>
-      <button onclick="toggleDarkMode()">
-        <img src="dark-mode.svg" class="dark-mode-icon" alt="Dark mode" />
+      <button class="toggle-btn" onclick="toggleDarkMode()">
+        Toggle Dark Mode
       </button>
     </div>
-    <div id="messages">
-      <ul id="message-list">
-      </ul>
-      <form id="form" onsubmit="sendMessage(event)">
-        <textarea id="message" name="message" placeholder="Votre message" tabindex="1"></textarea>
-        <button id="send" type="submit" tabindex="2">Envoyer</button>
+    <div id="messages" class="messages">
+      <ul id="message-list"></ul>
+      <form id="form" class="send-form" onsubmit="sendMessage(event)">
+        <input
+          id="pseudo"
+          name="pseudo"
+          type="text"
+          placeholder="Votre pseudo"
+          class="form-input"
+          tabindex="1"
+        />
+        <textarea
+          id="message"
+          name="message"
+          placeholder="Votre message"
+          class="form-input"
+          tabindex="2"
+        ></textarea>
+        <button id="send" type="submit" tabindex="3">Envoyer</button>
       </form>
     </div>
   </body>
