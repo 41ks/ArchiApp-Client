@@ -50,6 +50,7 @@ function sendMessage(event) {
 function toggleDarkMode() {
     let res = document.body.classList.toggle("dark-mode");
     localStorage.setItem("dark-mode", res);
+    document.getElementById("dark-mode").innerText = res ? "Mode clair" : "Mode sombre";
 }
 
 function fetchAllMessages() {
