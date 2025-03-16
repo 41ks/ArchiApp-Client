@@ -38,3 +38,10 @@ Les messages envoyés et reçus ont la structure suivante :
   "time": "2025-03-14T12:00:00Z"
 }
 ```
+
+## Les liens utiles
+
+- [Le dépôt GitHub du projet client](https://github.com/41ks/ArchiApp-Client.git)
+- [Le dépôt GitHub du projet serveur](https://github.com/41ks/ArchiApp-Server.git)
+- [Le lien vers le site web](https://archiapp-client.onrender.com/)
+- [Le lien vers l'api](https://archiapp-server.onrender.com/)
