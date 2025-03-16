@@ -12,7 +12,6 @@ function update(msgs) {
         let h3 = document.createElement("h3");
         h3.appendChild(document.createTextNode(e.pseudo));
         li.appendChild(h3);
-        // Time as subtitle
         let sub = document.createElement("p");
         if (e.time) {
             sub.classList.add("subtitle");
@@ -26,11 +25,9 @@ function update(msgs) {
             sub.appendChild(document.createTextNode(dateStr));
             li.appendChild(sub);
         }
-        // Message as paragraph
         let p = document.createElement("p");
         p.appendChild(document.createTextNode(e.msg));
         li.appendChild(p);
-        // Append the message to the list
         ul.appendChild(li);
     }
 }
@@ -45,7 +42,6 @@ function sendMessage(event) {
     }
     let msg = document.getElementById("message").value;
     document.getElementById("message").value = "";
-    console.log("Sending message: " + msg);
     fetch(SERVER_URL + "/msg/post?pseudo=" + pseudo + "&msg=" + msg)
         .then(function (response) {
             if (response.code == -1) {
@@ -73,12 +69,15 @@ function fetchAllMessages() {
         });
 }
 
+// Check if dark mode is enabled
 if (localStorage.getItem("dark-mode") === "true") {
     toggleDarkMode();
 }
 
+// Check if a pseudo is saved
 if (localStorage.getItem("pseudo")) {
     document.getElementById("pseudo").value = localStorage.getItem("pseudo");
 }
 
+// Fetch all messages
 fetchAllMessages();
